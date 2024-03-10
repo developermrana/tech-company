@@ -9,6 +9,6 @@
  git init
  git add .
  git commit –m “first commit”
- git branch –M main
+ git giu
  git remote add origin (repository name)
  git push –u origin main
