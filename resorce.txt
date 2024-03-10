@@ -1,0 +1,14 @@
+ secondary-color : #7b68ee
+ text-color : #5f5f5f
+ primary-color : #ff9800
+ button-color : #007aff
+ main-color : #fff
+
+ git and github command
+
+ git init
+ git add .
+ git commit –m “first commit”
+ git branch –M main
+ git remote add origin (repository name)
+ git push –u origin main
