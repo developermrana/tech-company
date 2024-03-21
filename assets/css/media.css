@@ -33,5 +33,26 @@
   }
   header .header-inner {
     display: block;
+    text-align: center;
+  }
+  /* header section end  */
+
+  .services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* services section end  */
+  .about-section {
+    display: block;
+  }
+  .about-content {
+    margin-bottom: 20px;
+  }
+  /* about section end  */
+}
+
+/* responsive for mobile  */
+@media screen and (max-width: 572px) {
+  .services {
+    grid-template-columns: 1fr;
   }
 }

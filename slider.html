@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+    />
+    <style>
+      .slide-content {
+        background: lightpink;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="splide" aria-label="Basic Structure Example">
+      <div class="splide__track">
+        <ul class="splide__list container">
+          <li class="splide__slide slide-content">slide content</li>
+          <li class="splide__slide slide-content">slide content</li>
+          <li class="splide__slide slide-content">slide content</li>
+        </ul>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+      var splide = new Splide(".splide", {
+        type: "loop",
+        perPage: 4,
+        focus: "center",
+        autoplay: true,
+        pauseOnHover: true,
+        speed: 400,
+        gap: 30,
+        height: 300,
+      });
+
+      splide.mount();
+    </script>
+  </body>
+</html>

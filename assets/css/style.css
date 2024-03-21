@@ -1,3 +1,8 @@
+/* google fonts  */
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap");
+/* font family
+font-family: "Dosis", sans-serif;
+*/
 * {
   margin: 0;
   padding: 0;
@@ -5,14 +10,27 @@
 }
 
 :root {
+  --text-color: #5f5f5f;
   --white: #fff;
   --purple: #6f42c1;
   --blue: #3e57d0;
   --yellow: #ffc107;
   --black: #000;
+  --orange: #ff9800;
+  --title: #404040;
+
+  --bg-grey: #f3f3f3;
 }
 
 /* common code start  */
+body {
+  font-family: "Dosis", sans-serif;
+}
+p {
+  color: var(--text-color);
+  letter-spacing: 1px;
+  line-height: 1.7;
+}
 a {
   text-decoration: none;
   display: inline-block;
@@ -21,7 +39,7 @@ li {
   list-style: none;
 }
 img {
-  display: inline-block;
+  display: block;
   width: 100%;
 }
 .container-fluid {
@@ -32,6 +50,25 @@ img {
 .container {
   padding: 0 5%;
   width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+.section-title {
+  text-align: center;
+  padding: 55px 0;
+}
+.sub-title {
+  color: var(--orange);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.title {
+  color: var(--title);
+  font-size: 40px;
+  font-weight: 800;
+  margin: 10px 0 0 0;
 }
 .button-box {
   display: flex;
@@ -77,14 +114,28 @@ header {
   );
   height: 100vh;
   width: 100%;
-  max-height: 650px;
+  max-height: 800px;
   position: relative;
 }
 header .wave-img {
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   right: 0;
   height: 40%;
+}
+html {
+  scroll-behavior: smooth;
+}
+.service {
+  height: 100vh;
+  background-color: #000;
+}
+.set-nav-bg {
+  position: fixed;
+  top: 0;
+  transition: 0.5s;
+  background-color: black;
+  z-index: 55555;
 }
 
 header nav {
@@ -114,6 +165,8 @@ header .menu-icon i {
 
 header .header-inner {
   display: flex;
+  gap: 80px;
+  padding-top: 60px;
 }
 header .social a {
   font-size: 20px;
@@ -131,9 +184,7 @@ header .social a:hover {
 header .header-content {
   flex-basis: 50%;
 }
-header .header-img {
-  flex-basis: 50%;
-}
+
 header .header-content h1 {
   padding-top: 20px;
   font-size: 60px;
@@ -164,6 +215,7 @@ header .header-content h1 {
   transform: translate(-50%, -50%);
   transition: 0.4s;
   z-index: -5555;
+  border-radius: 5px;
 }
 .header-content button:hover {
   background-color: transparent;
@@ -176,10 +228,199 @@ header .header-content h1 {
 }
 .header-content p {
   padding: 20px 0;
+  color: var(--white);
 }
 
 header .header-img {
+  flex-basis: 50%;
   z-index: 5555;
 }
-
+header .header-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 /* header section end  */
+
+/* service section start  */
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+.services .service {
+  padding: 35px 30px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 5px 7px 15px 2px rgba(82, 90, 101, 0.12);
+  transition: all 500ms ease-out;
+  margin-top: 30px;
+}
+.services .service:hover {
+  transform: translateY(-15px);
+}
+.services .service:hover .service-icon {
+  transform: rotateY(180deg);
+}
+.service > i {
+  color: #ff561d;
+  font-size: 50px;
+  transition: 0.5s;
+}
+.service h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+.service a {
+  color: var(--purple);
+  margin-top: 15px;
+  font-size: 18px;
+}
+.service a i {
+  margin-right: 5px;
+  transition: 0.5s all;
+  font-weight: 600;
+}
+.service a:hover .bx-right-arrow-alt {
+  transform: translateX(+5px);
+}
+/* service section end  */
+
+/* about section start  */
+.container-fluid.about {
+  background: var(--bg-grey);
+  margin: 55px 0;
+}
+.about-section {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  padding: 75px 0;
+}
+.about-img img {
+  border-radius: 8px;
+}
+
+.about-content .btn {
+  padding: 15px 50px;
+  display: inline-block;
+
+  font-weight: 700;
+  position: relative;
+  transition: all 0.3s;
+  background-color: var(--purple);
+  color: var(--white);
+  z-index: 5;
+  margin-top: 10px;
+}
+.about-content .btn::before {
+  content: "";
+  width: 100%;
+  height: 0%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--blue);
+  z-index: -1;
+  transition: all 0.3s;
+}
+.about-content .btn:hover {
+  background: transparent;
+}
+.about-content .btn:hover::before {
+  height: 100%;
+}
+
+.progress-container {
+  width: 100%;
+  background-color: #6e42c140;
+  margin: 10px 0;
+  border-radius: 8px;
+}
+.progress-status {
+  display: flex;
+  justify-content: space-between;
+}
+.progress-bar {
+  width: 0%;
+  height: 15px;
+  background-color: var(--purple);
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  transition: width 2s ease-out;
+  border-radius: 8px;
+}
+.about-img {
+  position: relative;
+}
+.about-img .img-text {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  padding: 15px 30px;
+  background: var(--white);
+}
+
+/* about section end  */
+
+/* chose us section start  */
+.choose-us-section {
+  display: flex;
+  gap: 35px;
+  align-items: center;
+}
+.choose-us-content .resound {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+.choose-us-content .resound p {
+  color: var(--black);
+  padding: 12px;
+  background: #cbcaca;
+  position: relative;
+  border-radius: 10px;
+  font-size: 22px;
+  font-weight: 600;
+  overflow: hidden;
+  z-index: 5;
+  transition: 0.3s all;
+}
+.choose-us-content .resound p .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.5%;
+  height: 100%;
+  background-color: var(--purple);
+  transition: 0.5s all;
+  border-radius: 10px;
+  z-index: -1;
+}
+.choose-us-content .resound p:hover {
+  color: var(--white);
+}
+.choose-us-content .resound p:hover .layer {
+  width: 100%;
+}
+/* chose us section end  */
+
+/* got top btn  */
+#goTop {
+  position: fixed;
+  bottom: 10000px;
+  right: 20px;
+  z-index: 2000;
+  transition: 1s;
+}
+#goTop i {
+  font-size: 35px;
+  color: var(--white);
+  padding: 15px;
+  background-color: var(--purple);
+  border-radius: 10px;
+}

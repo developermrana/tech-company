@@ -1,0 +1,45 @@
+https://p.w3layouts.com/demos_new/template_demo/05-02-2021/agricfarm-liberty-demo_Free/1836878686/web/index.html
+
+
+***********************
+wave animated background generator website.
+google search " wave motion animation background for website "
+https://loading.io/
+https://foolishdeveloper.com/css-wave-animation/
+https://www.softr.io/tools/svg-wave-generator
+*https://unused-css.com/blog/css-wave-animation/
+
+
+*********************
+ Typing animation website
+https://mattboldt.com/demos/typed-js/
+https://medium.com/
+https://www.jqueryscript.net/blog/best-typewriter-typing-animation.html
+*https://www.codehim.com/text-input/javascript-text-typing-animation/
+https://www.codesdope.com/blog/article/12-creative-css-and-javascript-text-typing-animati/
+https://dev.to/ljcdev/simple-typing-effect-pure-js-4p5m
+https://css-tricks.com/snippets/css/typewriter-effect/
+
+
+******************
+mouse/cursor effects
+https://blog.hubspot.com/website/animated-cursor
+*https://tholman.com/cursor-effects/
+*https://speckyboy.com/css-javascript-cursor-effects/
+https://codemyui.com/mouse-pointer-animation/
+
+***************
+slider
+https://splidejs.com/
+
+
+********************
+jquery plugin.
+https://www.jqueryscript.net/tags.php?/side%20menu/
+
+
+****************
+Google Search : vavi animation svg/css 
+1. https://codepen.io/tedmcdo/pen/PqxKXg
+
+

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tab</title>
+    <style>
+      .portfolio {
+        text-align: center;
+      }
+
+      .tabs {
+        margin-bottom: 20px;
+      }
+
+      .tab-btn {
+        padding: 10px 20px;
+        margin: 0 5px;
+        cursor: pointer;
+      }
+
+      .tab-btn.active-btn {
+        background-color: #333;
+        color: #fff;
+      }
+
+      .portfolio-items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .item {
+        width: 200px;
+        height: 150px;
+        background-color: #f0f0f0;
+        margin: 10px;
+        line-height: 150px;
+        font-size: 18px;
+
+        display: block;
+      }
+
+      .item.html {
+        background-color: #ffcccc;
+      }
+
+      .item.css {
+        background-color: #ccccff;
+      }
+
+      .item.javascript {
+        background-color: #ccffcc;
+      }
+
+      .item.hidden {
+        display: none;
+      }
+      .item.block {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="portfolio">
+      <div class="tabs">
+        <!-- method 1 -->
+        <button class="tab-btn active-btn" onclick="openTab('item')">
+          All
+        </button>
+        <button class="tab-btn" onclick="openTab('html')">HTML</button>
+        <button class="tab-btn" onclick="openTab('css')">CSS</button>
+        <button class="tab-btn" onclick="openTab('javascript')">
+          JavaScript
+        </button>
+        <!-- Method 2 -->
+        <!-- <button class="tab-btn active-btn" data-filter="all">All</button>
+        <button class="tab-btn" data-filter="html">HTML</button>
+        <button class="tab-btn" data-filter="css">CSS</button>
+        <button class="tab-btn" data-filter="javascript">JavaScript</button> -->
+      </div>
+      <div class="portfolio-items">
+        <div class="">
+          <img class="webDs" src="ssssss" alt="" />
+        </div>
+
+        <div class="item html">HTML Portfolio Item 1</div>
+        <div class="item css">CSS Portfolio Item 1</div>
+        <div class="item javascript">JavaScript Portfolio Item 1</div>
+        <div class="item html">HTML Portfolio Item 2</div>
+        <div class="item css">CSS Portfolio Item 2</div>
+        <div class="item javascript">JavaScript Portfolio Item 2</div>
+      </div>
+    </div>
+
+    <!-- javaScript -->
+    <script>
+      // method 1
+      //   const tabBtns = document.querySelectorAll(".tab-btn");
+      //   const items = document.querySelectorAll(".item");
+
+      // function openTab(tabName) {
+      //   for (btn of tabBtns) {
+      //     btn.classList.remove("active-btn");
+      //   }
+      //   event.target.classList.add("active-btn");
+
+      //   for (item of items) {
+      //     item.classList.remove("block");
+      //     item.classList.add("hidden");
+      //   }
+
+      //   const activeItems = document.getElementsByClassName(tabName);
+      //   for (activeItem of activeItems) {
+      //     activeItem.classList.add("block");
+      //   }
+      // }
+      const tabBtns = document.querySelectorAll(".tab-btn");
+      const items = document.querySelectorAll(".item");
+
+      function openTab(tabName) {
+        for (let btn of tabBtns) {
+          btn.classList.remove("active-btn");
+        }
+        event.target.classList.add("active-btn");
+
+        for (let item of items) {
+          item.classList.add("hidden");
+          item.classList.remove("block");
+        }
+        const activeItems = document.getElementsByClassName(tabName);
+        for (let activeItem of activeItems) {
+          activeItem.classList.add("block");
+        }
+      }
+
+      // method 2
+
+      tabBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          tabBtns.forEach((btn) => btn.classList.remove("active-btn"));
+          btn.classList.add("active-btn");
+          const filter = btn.getAttribute("data-filter");
+          filterItems(filter);
+        });
+      });
+
+      function filterItems(filter) {
+        items.forEach((item) => {
+          if (filter === "all" || item.classList.contains(filter)) {
+            item.classList.remove("hidden");
+          } else {
+            item.classList.add("hidden");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

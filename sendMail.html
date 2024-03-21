@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>send email</title>
+    <style>
+      .container {
+        margin-top: 10vh;
+      }
+      form {
+        max-width: 500px;
+        margin-top: 20vh;
+        margin: 0 auto;
+        padding: 40px;
+        background-color: #ddd;
+      }
+      .form-control {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+      }
+      .form-control label {
+        font-size: 18px;
+        margin-bottom: 8px;
+        color: #593c14;
+        font-weight: bold;
+        display: block;
+      }
+      .form-control input,
+      .form-control textarea {
+        display: block;
+        border: none;
+        outline: none;
+        padding: 10px;
+        font-size: 18px;
+        border-radius: 7px;
+      }
+      .form-control textarea {
+        resize: none;
+        color: #593c14;
+      }
+      form button {
+        padding: 10px;
+        width: 100%;
+        border-radius: 7px;
+        color: wheat;
+        background: tomato;
+        border: none;
+        font-size: 18px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="" onsubmit="handleForm(event)">
+        <div class="form-control">
+          <label for="name">Your Name</label>
+          <input type="text" name="name" id="name" placeholder="abc" value="" />
+          <p></p>
+        </div>
+        <div class="form-control">
+          <label for="email">Your Email;</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="xyz@gmail.com"
+            value=""
+          />
+          <p></p>
+        </div>
+        <div class="form-control">
+          <label for="message">Your Message</label>
+          <textarea
+            name="message"
+            id="message"
+            cols="30"
+            rows="10"
+            placeholder="write your message"
+          ></textarea>
+          <p></p>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <script>
+      const nameElement = document.getElementById("name");
+      const emailElement = document.getElementById("email");
+      const messageElement = document.getElementById("message");
+
+      //   set setError function
+      function setError(element, message) {
+        element.style.border = "1px solid red";
+        const errorElement = element.nextElementSibling;
+        errorElement.innerText = message;
+      }
+
+      //   set Success function
+      function setSuccess(element) {
+        element.style.border = "1px solid green";
+        const errorElement = element.nextElementSibling;
+        errorElement.innerText = "";
+      }
+      //   const error = false;
+      function handleForm(event) {
+        event.preventDefault();
+        const name = nameElement.value;
+        const email = emailElement.value;
+        const message = messageElement.value;
+
+        if (name === "" || name.length < 3) {
+          error = true;
+          return setError(nameElement, "Name is required");
+        } else {
+          setSuccess(nameElement);
+        }
+
+        if (email === "") {
+          return setError(emailElement, "Email is required");
+        } else {
+          setSuccess(emailElement);
+        }
+        if (message === "") {
+          return setError(messageElement, "message is required");
+        } else {
+          setSuccess(messageElement);
+        }
+
+        // email js
+        var templateParams = {
+          name: name,
+          email: email,
+          message: message,
+        };
+
+        // if(error){
+        //     return
+        // }else{
+
+        // }
+        emailjs
+          .send("service_9sno3jb", "template_o4u4vaf", templateParams)
+          .then(
+            (response) => {
+              //   console.log("send", response);
+              Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Success",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+            },
+            (error) => {
+              //   console.log("FAILED...", error);
+              Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Something went wrong!",
+              });
+            }
+          );
+      }
+    </script>
+    <!-- emailjs link  -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "442bWjgCwUPVhbap0",
+        });
+      })();
+    </script>
+    <!-- sweetalert2  -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>

@@ -9,20 +9,51 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
     />
+    <!-- splide slider css  -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+    />
+    <!-- loader css  -->
+    <link rel="stylesheet" href="./assets/css/loader.css" />
     <!-- main stylesheet -->
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/media.css" />
   </head>
   <body>
+    <!-- loader  -->
+    <div class="cs-loader show" id="loader">
+      <div class="cs-loader__media">
+        <img
+          loading="lazy"
+          src="https://www.bigmpizza.com/static/media/loader.dcda44e4fa1c198431d4.gif"
+          alt=""
+        />
+      </div>
+      <div class="waviy text">
+        <span>L</span>
+        <span>O</span>
+        <span>A</span>
+        <span>D</span>
+        <span>I</span>
+        <span>N</span>
+        <span>G</span>
+      </div>
+    </div>
+
+    <!-- goTopBtn -->
+    <div id="goTop">
+      <i class="bx bxs-up-arrow-square"></i>
+    </div>
     <header class="container-fluid">
-      <nav class="container">
+      <nav class="container" id="full-navbar">
         <div class="logo">
           <a href="#"><img src="./assets/image/logo.png" alt="Logo" /></a>
         </div>
         <ul id="navbar">
           <li><a href="#">Home </a></li>
           <li><a href="#">About Us</a></li>
-          <li><a href="#">Services</a></li>
+          <li><a href="./service.html">Services</a></li>
           <li><a href="#">Portfolio</a></li>
           <li><a href="#">Pages</a></li>
           <li><a href="#">Blog</a></li>
@@ -59,7 +90,7 @@
           <button>Contact us <span class="btn-after"></span></button>
         </div>
         <div class="header-img">
-          <img src="./assets/image/home-font.png" alt="header img" />
+          <img data-tilt src="./assets/image/home-font.png" alt="header img" />
         </div>
       </div>
       <img
@@ -68,21 +99,237 @@
         alt="header wave img"
       />
     </header>
-    <div class="text"></div>
+    <!-- header section end  -->
+
+    <!-- service section start  -->
+    <section class="container-fluid">
+      <div class="section-title">
+        <h3 class="sub-title">WHAT WE PROVIDE</h3>
+        <h2 class="title">Our Services</h2>
+      </div>
+      <div class="container">
+        <div class="services">
+          <article class="service">
+            <i class="bx bx-code-alt service-icon"></i>
+            <h2>Web Development</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt dolore magna aliqua
+            </p>
+            <a href="#"><i class="bx bx-right-arrow-alt"></i> Read More</a>
+          </article>
+          <!-- single service item end  -->
+          <article class="service">
+            <i class="bx bx-code-alt service-icon"></i>
+            <h2>Web Development</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt dolore magna aliqua
+            </p>
+            <a href="#"><i class="bx bx-right-arrow-alt"></i> Read More</a>
+          </article>
+          <!-- single service item end  -->
+          <article class="service">
+            <i class="bx bx-code-alt service-icon"></i>
+            <h2>Web Development</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt dolore magna aliqua
+            </p>
+            <a href="#"><i class="bx bx-right-arrow-alt"></i> Read More</a>
+          </article>
+          <!-- single service item end  -->
+          <article class="service">
+            <i class="bx bx-code-alt service-icon"></i>
+            <h2>Web Development</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt dolore magna aliqua
+            </p>
+            <a href="#"><i class="bx bx-right-arrow-alt"></i> Read More</a>
+          </article>
+          <!-- single service item end  -->
+          <article class="service">
+            <i class="bx bx-code-alt service-icon"></i>
+            <h2>Web Development</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt dolore magna aliqua
+            </p>
+            <a href="#"><i class="bx bx-right-arrow-alt"></i> Read More</a>
+          </article>
+          <!-- single service item end  -->
+          <article class="service">
+            <i class="bx bx-code-alt service-icon"></i>
+            <h2>Web Development</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt dolore magna aliqua
+            </p>
+            <a href="#"><i class="bx bx-right-arrow-alt"></i> Read More</a>
+          </article>
+          <!-- single service item end  -->
+        </div>
+      </div>
+    </section>
+    <!-- service section end  -->
+
+    <!-- about section start  -->
+    <section class="container-fluid about">
+      <div class="container">
+        <div class="about-section">
+          <div class="about-content">
+            <h3 class="sub-title">ABOUT OUR COMPANY</h3>
+            <h2 class="title">
+              Providing Your Business With A Quality IT Service is Our Passion
+            </h2>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad
+              minim IT Consulting
+            </p>
+            <div>
+              <div class="progress-status">
+                <h4>HTML</h4>
+                <h4>90%</h4>
+              </div>
+              <div class="progress-container">
+                <div class="progress-bar" data-target="90"></div>
+              </div>
+            </div>
+            <!-- single progress bar end  -->
+            <div>
+              <div class="progress-status">
+                <h4>CSS</h4>
+                <h4>80%</h4>
+              </div>
+              <div class="progress-container">
+                <div class="progress-bar" data-target="80"></div>
+              </div>
+            </div>
+            <!-- single progress bar end  -->
+            <div>
+              <div class="progress-status">
+                <h4>JavaScript</h4>
+                <h4>70%</h4>
+              </div>
+              <div class="progress-container">
+                <div class="progress-bar" data-target="70"></div>
+              </div>
+            </div>
+            <!-- single progress bar end  -->
+
+            <a class="btn" href="#">Learn More</a>
+          </div>
+
+          <div class="about-img">
+            <img
+              data-tilt
+              max:50
+              src="./assets/image/about.jpg"
+              alt="About Image"
+            />
+            <div class="img-text">
+              <h2 class="title">23</h2>
+              <p class="sub-title">YEARS OF EXPERIENCE</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- about section end  -->
+
+    <div class="container-fluid">
+      <div class="container">
+        <div class="choose-us-section">
+          <div class="choose-us-img">
+            <img src="./assets/image/choose-1.png" alt="Choose us" />
+          </div>
+          <div class="choose-us-content">
+            <h3 class="sub-title">ABOUT OUR COMPANY</h3>
+            <h2 class="title">
+              Providing Your Business With A Quality IT Service is Our Passion
+            </h2>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad
+              minim IT Consulting
+            </p>
+
+            <div class="resound">
+              <p>Remote IT Assistance <span class="layer"></span></p>
+              <p>Remote IT Assistance <span class="layer"></span></p>
+              <p>Remote IT Assistance <span class="layer"></span></p>
+              <p>Remote IT Assistance <span class="layer"></span></p>
+              <p>Remote IT Assistance <span class="layer"></span></p>
+              <p>Remote IT Assistance <span class="layer"></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- CHOOSE US section end  -->
+
+    <div class="container-fluid">
+      <div class="container">
+        <div class="section-title">
+          <h3 class="sub-title">ABOUT OUR COMPANY</h3>
+          <h2 class="title">
+            Providing Your Business With A Quality IT Service is Our Passion
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <section class="container">
+      <div class="splide" aria-label="Basic Structure Example">
+        <div class="splide__track">
+          <div class="splide__list">
+            <div class="splide__slide" style="background: #000">Slide 01</div>
+            <div class="splide__slide" style="background: #000">Slide 02</div>
+            <div class="splide__slide" style="background: #000">Slide 03</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- counter -->
+    <div id="counter" class="container counter">
+      <h1><span class="count percent" data-count="100"> 0 </span> +</h1>
+      <h1>
+        <span class="count percent" data-count="100"> 0 </span>
+      </h1>
+      <h1>
+        <span class="count percent" data-count="100"> 0 </span>
+      </h1>
+    </div>
+
+    <!-- jquery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- splide slider js  -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <!-- text typing animation -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"
       integrity="sha512-BdHyGtczsUoFcEma+MfXc71KJLv/cd+sUsUaYYf2mXpfG/PtBjNXsPo78+rxWjscxUYN2Qr2+DbeGGiJx81ifg=="
       crossorigin="anonymous"
     ></script>
+
+    <!-- mouse effect  -->
+    <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
     <script>
-      var typing = new Typed(".text", {
-        strings: ["", "Freelancer", "Web Designer", "Web Developer"],
-        typeSpeed: 100,
-        backSpeed: 40,
-        loop: true,
+      // new cursoreffects.springyEmojiCursor({ emoji: "" });
+      new cursoreffects.rainbowCursor({
+        length: 3,
+        colors: ["red", "blue"],
+        size: 4,
       });
     </script>
+
+    <!-- vanilla-tilt js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
     <!-- main script  -->
     <script src="./assets/js/main.js"></script>
   </body>
